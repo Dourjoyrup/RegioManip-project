@@ -1,0 +1,35 @@
+{
+  "image_path": "data/color_000012.png",
+  "num_objects": 2,
+  "objects": [
+    {
+      "name": "scraper",
+      "ok": true,
+      "num_candidates": 2,
+      "mask_paths": [
+        "results/regiomanip2/color_000012_run3/dino_sam/sam/masks/scraper_inner_01.png",
+        "results/regiomanip2/color_000012_run3/dino_sam/sam/masks/scraper_inner_02.png"
+      ],
+      "mask_roles": [
+        "inner_01",
+        "inner_02"
+      ],
+      "whole_mask_path": "results/regiomanip2/color_000012_run3/dino_sam/sam/masks/scraper_whole.png",
+      "grid_path": "results/regiomanip2/color_000012_run3/dino_sam/sam/grid_scraper.png"
+    },
+    {
+      "name": "yellow_putty",
+      "ok": true,
+      "num_candidates": 1,
+      "mask_paths": [
+        "results/regiomanip2/color_000012_run3/dino_sam/sam/masks/yellow_putty_whole.png"
+      ],
+      "mask_roles": [
+        "whole"
+      ],
+      "whole_mask_path": "results/regiomanip2/color_000012_run3/dino_sam/sam/masks/yellow_putty_whole.png",
+      "grid_path": "results/regiomanip2/color_000012_run3/dino_sam/sam/grid_yellow_putty.png"
+    }
+  ],
+  "mode": "whole_then_2_inner_masks"
+}

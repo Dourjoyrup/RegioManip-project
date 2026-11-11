@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Environments and secrets
+.env
+.venv/
+venv/
+env/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+
+# Model weights
+*.pth
+*.pt
+*.ckpt
+checkpoints/
+
+# Generated rendering intermediates
+**/frames/
+**/keyframes/
+*.log
+
+# Author title page (funding, CRediT, contact details) is kept private
+Manuscript/RegioManip_Title_Page_With_Author_Details.pdf
+
+# Keep the final publication video
+!results/video/regiomanip_stage1_stage2_stage3_final/
+!results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_stage2_stage3_FINAL.mp4

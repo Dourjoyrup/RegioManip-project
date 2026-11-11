@@ -1,0 +1,120 @@
+{
+  "version": "0.1",
+  "profiles": {
+    "LinearMove": {
+      "gentle": {
+        "f_n_min": 0.5,
+        "f_n_max": 2.0,
+        "f_t_max": 1.0,
+        "tau_n_max": 0.05,
+        "tau_t_max": 0.03
+      },
+      "nominal": {
+        "f_n_min": 2.0,
+        "f_n_max": 6.0,
+        "f_t_max": 3.0,
+        "tau_n_max": 0.12,
+        "tau_t_max": 0.08
+      },
+      "firm": {
+        "f_n_min": 4.0,
+        "f_n_max": 10.0,
+        "f_t_max": 5.0,
+        "tau_n_max": 0.2,
+        "tau_t_max": 0.12
+      }
+    },
+    "RotateMove": {
+      "gentle": {
+        "f_n_min": 0.5,
+        "f_n_max": 2.5,
+        "f_t_max": 1.0,
+        "tau_n_max": 0.08,
+        "tau_t_max": 0.05
+      },
+      "nominal": {
+        "f_n_min": 2.0,
+        "f_n_max": 5.0,
+        "f_t_max": 2.0,
+        "tau_n_max": 0.2,
+        "tau_t_max": 0.1
+      },
+      "firm": {
+        "f_n_min": 4.0,
+        "f_n_max": 8.0,
+        "f_t_max": 3.0,
+        "tau_n_max": 0.35,
+        "tau_t_max": 0.18
+      }
+    },
+    "ApproachMove": {
+      "gentle": {
+        "f_n_min": 0.0,
+        "f_n_max": 0.5,
+        "f_t_max": 0.4,
+        "tau_n_max": 0.02,
+        "tau_t_max": 0.02
+      },
+      "nominal": {
+        "f_n_min": 0.0,
+        "f_n_max": 1.0,
+        "f_t_max": 0.6,
+        "tau_n_max": 0.03,
+        "tau_t_max": 0.03
+      },
+      "firm": {
+        "f_n_min": 0.0,
+        "f_n_max": 1.5,
+        "f_t_max": 0.8,
+        "tau_n_max": 0.04,
+        "tau_t_max": 0.04
+      }
+    },
+    "RetractMove": {
+      "gentle": {
+        "f_n_min": 0.0,
+        "f_n_max": 0.3,
+        "f_t_max": 0.3,
+        "tau_n_max": 0.02,
+        "tau_t_max": 0.02
+      },
+      "nominal": {
+        "f_n_min": 0.0,
+        "f_n_max": 0.5,
+        "f_t_max": 0.4,
+        "tau_n_max": 0.03,
+        "tau_t_max": 0.03
+      },
+      "firm": {
+        "f_n_min": 0.0,
+        "f_n_max": 0.8,
+        "f_t_max": 0.5,
+        "tau_n_max": 0.04,
+        "tau_t_max": 0.04
+      }
+    },
+    "GripperCommand": {
+      "gentle": {
+        "f_n_min": 0.0,
+        "f_n_max": 0.0,
+        "f_t_max": 0.0,
+        "tau_n_max": 0.0,
+        "tau_t_max": 0.0
+      },
+      "nominal": {
+        "f_n_min": 0.0,
+        "f_n_max": 0.0,
+        "f_t_max": 0.0,
+        "tau_n_max": 0.0,
+        "tau_t_max": 0.0
+      },
+      "firm": {
+        "f_n_min": 0.0,
+        "f_n_max": 0.0,
+        "f_t_max": 0.0,
+        "tau_n_max": 0.0,
+        "tau_t_max": 0.0
+      }
+    }
+  }
+}

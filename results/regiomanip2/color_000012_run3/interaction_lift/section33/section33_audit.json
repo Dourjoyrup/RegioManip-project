@@ -1,0 +1,314 @@
+{
+  "source_result": "/home/rup/RegioManip/results/regiomanip2/color_000012_run3/interaction_lift/interaction_lift_results.json",
+  "visual_source": "/home/rup/RegioManip/results/regiomanip2/color_000012_run3/full_frame_combined.png",
+  "manuscript_section": "3.3 Contact-Frame Hypothesis Lifting",
+  "residual_limit_m": 0.015,
+  "primitive_validation": {
+    "work_line": {
+      "residual_p90_m": 0.019172588363289833,
+      "limit_m": 0.015,
+      "valid": false,
+      "rejection_reason": "residual_p90_above_15mm"
+    },
+    "handle_line": {
+      "residual_p90_m": 0.007092704996466637,
+      "limit_m": 0.015,
+      "valid": true,
+      "rejection_reason": null
+    },
+    "target_plane": {
+      "residual_p90_m": 0.0036146698985248804,
+      "limit_m": 0.015,
+      "valid": true,
+      "rejection_reason": null
+    }
+  },
+  "worst_primitive": "work_line",
+  "strict_geometry_valid": false,
+  "confidence_equation_7": {
+    "geometry_vlm_agreement": 0.77106377832545,
+    "mean_vlm_confidence": 1.0,
+    "mean_vlm_confidence_source": "derived_from_eq5_uncertainty",
+    "affordance_hypothesis_probability": 1.0,
+    "geometric_quality": 0.0,
+    "primitive_residual_p90_m": 0.019172588363289833,
+    "primitive_residual_limit_m": 0.015,
+    "weights": {
+      "psi": 0.3,
+      "eta_vlm_mean": 0.3,
+      "p_h": 0.25,
+      "q_geo": 0.15
+    },
+    "score": 0.781319133497635
+  },
+  "all_sign_hypotheses": [
+    {
+      "hypothesis_id": "et+1_en+1",
+      "tangent_sign": 1,
+      "normal_sign": 1,
+      "rotation": [
+        [
+          0.9835391044616699,
+          -0.17846642434597015,
+          0.02829507738351822
+        ],
+        [
+          0.15248733758926392,
+          0.9037734270095825,
+          0.3999265730381012
+        ],
+        [
+          -0.09694579988718033,
+          -0.38902878761291504,
+          0.9161102771759033
+        ]
+      ],
+      "translation_xyz": [
+        -0.006359530612826347,
+        0.015691811218857765,
+        0.2750000059604645
+      ],
+      "determinant": 1.0,
+      "orthogonality_error": 6.206366785786675e-08,
+      "proper_rotation": true,
+      "surface_approach_preferred": false,
+      "rejection_reason": "primitive_residual_validation_failed",
+      "rank": 2,
+      "confidence": {
+        "geometry_vlm_agreement": 0.77106377832545,
+        "mean_vlm_confidence": 1.0,
+        "mean_vlm_confidence_source": "derived_from_eq5_uncertainty",
+        "affordance_hypothesis_probability": 1.0,
+        "geometric_quality": 0.0,
+        "primitive_residual_p90_m": 0.019172588363289833,
+        "primitive_residual_limit_m": 0.015,
+        "weights": {
+          "psi": 0.3,
+          "eta_vlm_mean": 0.3,
+          "p_h": 0.25,
+          "q_geo": 0.15
+        },
+        "score": 0.781319133497635
+      },
+      "strict_geometry_valid": false
+    },
+    {
+      "hypothesis_id": "et+1_en-1",
+      "tangent_sign": 1,
+      "normal_sign": -1,
+      "rotation": [
+        [
+          0.9835391044616699,
+          -0.17846642434597015,
+          -0.02829507738351822
+        ],
+        [
+          0.15248733758926392,
+          0.9037734270095825,
+          -0.3999265730381012
+        ],
+        [
+          -0.09694579988718033,
+          -0.38902878761291504,
+          -0.9161102771759033
+        ]
+      ],
+      "translation_xyz": [
+        -0.006359530612826347,
+        0.015691811218857765,
+        0.2750000059604645
+      ],
+      "determinant": -1.0,
+      "orthogonality_error": 6.206366785786675e-08,
+      "proper_rotation": false,
+      "surface_approach_preferred": false,
+      "rejection_reason": "reflection_det_negative"
+    },
+    {
+      "hypothesis_id": "et-1_en+1",
+      "tangent_sign": -1,
+      "normal_sign": 1,
+      "rotation": [
+        [
+          -0.9835391044616699,
+          -0.17846642434597015,
+          0.02829507738351822
+        ],
+        [
+          -0.15248733758926392,
+          0.9037734270095825,
+          0.3999265730381012
+        ],
+        [
+          0.09694579988718033,
+          -0.38902878761291504,
+          0.9161102771759033
+        ]
+      ],
+      "translation_xyz": [
+        -0.006359530612826347,
+        0.015691811218857765,
+        0.2750000059604645
+      ],
+      "determinant": -1.0,
+      "orthogonality_error": 6.206366785786675e-08,
+      "proper_rotation": false,
+      "surface_approach_preferred": false,
+      "rejection_reason": "reflection_det_negative"
+    },
+    {
+      "hypothesis_id": "et-1_en-1",
+      "tangent_sign": -1,
+      "normal_sign": -1,
+      "rotation": [
+        [
+          -0.9835391044616699,
+          -0.17846642434597015,
+          -0.02829507738351822
+        ],
+        [
+          -0.15248733758926392,
+          0.9037734270095825,
+          -0.3999265730381012
+        ],
+        [
+          0.09694579988718033,
+          -0.38902878761291504,
+          -0.9161102771759033
+        ]
+      ],
+      "translation_xyz": [
+        -0.006359530612826347,
+        0.015691811218857765,
+        0.2750000059604645
+      ],
+      "determinant": 1.0,
+      "orthogonality_error": 6.206366785786675e-08,
+      "proper_rotation": true,
+      "surface_approach_preferred": true,
+      "rejection_reason": "primitive_residual_validation_failed",
+      "rank": 1,
+      "confidence": {
+        "geometry_vlm_agreement": 0.77106377832545,
+        "mean_vlm_confidence": 1.0,
+        "mean_vlm_confidence_source": "derived_from_eq5_uncertainty",
+        "affordance_hypothesis_probability": 1.0,
+        "geometric_quality": 0.0,
+        "primitive_residual_p90_m": 0.019172588363289833,
+        "primitive_residual_limit_m": 0.015,
+        "weights": {
+          "psi": 0.3,
+          "eta_vlm_mean": 0.3,
+          "p_h": 0.25,
+          "q_geo": 0.15
+        },
+        "score": 0.781319133497635
+      },
+      "strict_geometry_valid": false
+    }
+  ],
+  "ranked_proper_hypotheses": [
+    {
+      "hypothesis_id": "et-1_en-1",
+      "tangent_sign": -1,
+      "normal_sign": -1,
+      "rotation": [
+        [
+          -0.9835391044616699,
+          -0.17846642434597015,
+          -0.02829507738351822
+        ],
+        [
+          -0.15248733758926392,
+          0.9037734270095825,
+          -0.3999265730381012
+        ],
+        [
+          0.09694579988718033,
+          -0.38902878761291504,
+          -0.9161102771759033
+        ]
+      ],
+      "translation_xyz": [
+        -0.006359530612826347,
+        0.015691811218857765,
+        0.2750000059604645
+      ],
+      "determinant": 1.0,
+      "orthogonality_error": 6.206366785786675e-08,
+      "proper_rotation": true,
+      "surface_approach_preferred": true,
+      "rejection_reason": "primitive_residual_validation_failed",
+      "rank": 1,
+      "confidence": {
+        "geometry_vlm_agreement": 0.77106377832545,
+        "mean_vlm_confidence": 1.0,
+        "mean_vlm_confidence_source": "derived_from_eq5_uncertainty",
+        "affordance_hypothesis_probability": 1.0,
+        "geometric_quality": 0.0,
+        "primitive_residual_p90_m": 0.019172588363289833,
+        "primitive_residual_limit_m": 0.015,
+        "weights": {
+          "psi": 0.3,
+          "eta_vlm_mean": 0.3,
+          "p_h": 0.25,
+          "q_geo": 0.15
+        },
+        "score": 0.781319133497635
+      },
+      "strict_geometry_valid": false
+    },
+    {
+      "hypothesis_id": "et+1_en+1",
+      "tangent_sign": 1,
+      "normal_sign": 1,
+      "rotation": [
+        [
+          0.9835391044616699,
+          -0.17846642434597015,
+          0.02829507738351822
+        ],
+        [
+          0.15248733758926392,
+          0.9037734270095825,
+          0.3999265730381012
+        ],
+        [
+          -0.09694579988718033,
+          -0.38902878761291504,
+          0.9161102771759033
+        ]
+      ],
+      "translation_xyz": [
+        -0.006359530612826347,
+        0.015691811218857765,
+        0.2750000059604645
+      ],
+      "determinant": 1.0,
+      "orthogonality_error": 6.206366785786675e-08,
+      "proper_rotation": true,
+      "surface_approach_preferred": false,
+      "rejection_reason": "primitive_residual_validation_failed",
+      "rank": 2,
+      "confidence": {
+        "geometry_vlm_agreement": 0.77106377832545,
+        "mean_vlm_confidence": 1.0,
+        "mean_vlm_confidence_source": "derived_from_eq5_uncertainty",
+        "affordance_hypothesis_probability": 1.0,
+        "geometric_quality": 0.0,
+        "primitive_residual_p90_m": 0.019172588363289833,
+        "primitive_residual_limit_m": 0.015,
+        "weights": {
+          "psi": 0.3,
+          "eta_vlm_mean": 0.3,
+          "p_h": 0.25,
+          "q_geo": 0.15
+        },
+        "score": 0.781319133497635
+      },
+      "strict_geometry_valid": false
+    }
+  ],
+  "selection_rule": "proper rotation; surface approach prefers eps_n=-1; Equation (7) ranks confidence",
+  "visualization": "/home/rup/RegioManip/results/regiomanip2/color_000012_run3/interaction_lift/section33/hypothesis_grid.png"
+}

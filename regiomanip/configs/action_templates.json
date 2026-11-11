@@ -1,0 +1,113 @@
+{
+  "version": "0.1",
+  "templates": {
+    "Move": {
+      "mode": "ApproachMove",
+      "contact_intent": "no_contact",
+      "terminal_constraints": [
+        "frame_alignment",
+        "reach_pose"
+      ],
+      "path_constraints": [
+        "collision_avoidance",
+        "smoothness",
+        "ik_feasibility"
+      ],
+      "theta_defaults": {
+        "pose_weight": 3.0,
+        "path_weight": 1.5,
+        "frame_align_weight": 2.0
+      }
+    },
+    "LinearMove": {
+      "mode": "LinearMove",
+      "contact_intent": "maintain_contact",
+      "terminal_constraints": [
+        "reach_line_end",
+        "frame_alignment"
+      ],
+      "path_constraints": [
+        "contact_band",
+        "normal_alignment",
+        "line_following",
+        "progress_monotonic",
+        "collision_avoidance",
+        "smoothness",
+        "ik_feasibility",
+        "wrench_limits"
+      ],
+      "theta_defaults": {
+        "contact_band_m": [
+          0.0,
+          0.004
+        ],
+        "normal_align_tol_deg": 10.0,
+        "progress_weight": 4.0,
+        "frame_align_weight": 3.0,
+        "wrench_weight": 2.5
+      }
+    },
+    "RotateMove": {
+      "mode": "RotateMove",
+      "contact_intent": "maintain_contact",
+      "terminal_constraints": [
+        "reach_rotation_target",
+        "axis_alignment"
+      ],
+      "path_constraints": [
+        "contact_band",
+        "axis_alignment",
+        "pivot_consistency",
+        "collision_avoidance",
+        "smoothness",
+        "ik_feasibility",
+        "wrench_limits"
+      ],
+      "theta_defaults": {
+        "contact_band_m": [
+          0.0,
+          0.003
+        ],
+        "axis_align_tol_deg": 8.0,
+        "rotation_weight": 4.0,
+        "wrench_weight": 2.5
+      }
+    },
+    "RetractMove": {
+      "mode": "RetractMove",
+      "contact_intent": "break_contact",
+      "terminal_constraints": [
+        "clearance_increase",
+        "reach_pose"
+      ],
+      "path_constraints": [
+        "collision_avoidance",
+        "clearance_growth",
+        "smoothness",
+        "ik_feasibility"
+      ],
+      "theta_defaults": {
+        "clearance_margin_m": 0.01,
+        "path_weight": 1.5,
+        "release_weight": 2.0
+      }
+    },
+    "Grip": {
+      "mode": "GripperCommand",
+      "contact_intent": "gripper_only",
+      "terminal_constraints": [
+        "gripper_state"
+      ],
+      "path_constraints": [],
+      "theta_defaults": {
+        "gripper_weight": 1.0
+      }
+    }
+  },
+  "symbolic_action_map": {
+    "Move": "Move",
+    "Linear": "LinearMove",
+    "Rotate": "RotateMove",
+    "Grip": "Grip"
+  }
+}

@@ -1,0 +1,2190 @@
+{
+  "version": "0.2",
+  "view": "paper",
+  "notation": "Pi = <Fi, Li, Ci_term, Ci_path, Wi, Theta_i>",
+  "method": "RegioManip action constraint synthesis",
+  "scene_summary": {
+    "tool": "scraper",
+    "target": "yellow_putty",
+    "pattern": "GRASP",
+    "selected_frame": "tool_target_best",
+    "interaction_confidence": 0.6797193788085133,
+    "perception_confidence": 0.5333333333333333
+  },
+  "constraint_programs": [
+    {
+      "step_id": 1,
+      "step_name": "step1",
+      "high_level_step": {
+        "interaction_intent": "Move(current,H)",
+        "wrench_intent": "Off",
+        "auxiliary_intents": [
+          {
+            "action_id": 2,
+            "label": "step1_action2",
+            "mode": "GripperCommand",
+            "motion": "Grip(1)",
+            "force": "Off"
+          }
+        ]
+      },
+      "subgoal_program": {
+        "type": "terminal_constraint_manifold",
+        "objective": "terminal_mode_goal_satisfaction",
+        "terminal_residuals": [
+          {
+            "name": "frame_alignment",
+            "phase": "terminal",
+            "role": "pose_to_frame_alignment",
+            "enabled": true,
+            "weight_key": "frame_align_weight",
+            "weight": 2.1437755030468106,
+            "geometry_ref": "Li.line"
+          },
+          {
+            "name": "reach_pose",
+            "phase": "terminal",
+            "role": "terminal_reach",
+            "enabled": true,
+            "weight_key": "pose_weight",
+            "weight": 3.0,
+            "geometry_ref": "Li.target_pose"
+          }
+        ]
+      },
+      "path_program": {
+        "type": "path_constraint_bundle",
+        "objective": "receding_horizon_path_feasibility",
+        "mode_residuals": [],
+        "shared_regularizers": [
+          {
+            "name": "collision_avoidance",
+            "phase": "path",
+            "role": "shared_feasibility_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.5
+          },
+          {
+            "name": "smoothness",
+            "phase": "path",
+            "role": "shared_smoothness_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.5
+          },
+          {
+            "name": "ik_feasibility",
+            "phase": "path",
+            "role": "shared_kinematic_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.5
+          }
+        ]
+      },
+      "Pi": {
+        "program_id": "Pi_1",
+        "mode": "ApproachMove",
+        "contact_intent": "no_contact",
+        "Fi": {
+          "frame_id": "tool_target_best",
+          "selected_hypothesis": {
+            "name": "best",
+            "score": 0.6797193788085133,
+            "normal_sign": 1,
+            "tangent_sign": 1
+          },
+          "alternatives": [
+            {
+              "name": "alt_1",
+              "score": 0.6797193788085133,
+              "normal_sign": -1,
+              "tangent_sign": 1
+            },
+            {
+              "name": "alt_2",
+              "score": 0.6797193788085133,
+              "normal_sign": 1,
+              "tangent_sign": -1
+            },
+            {
+              "name": "alt_3",
+              "score": 0.6797193788085133,
+              "normal_sign": -1,
+              "tangent_sign": -1
+            }
+          ],
+          "execution_frame": "target_P",
+          "frame_selection_policy": "best_plus_alternatives"
+        },
+        "Li": {
+          "line": {
+            "start_cam": [
+              -0.008663414977490902,
+              -0.008663414977490902,
+              0.29600000381469727
+            ],
+            "end_cam": [
+              -0.011678049340844154,
+              0.03589918836951256,
+              0.26600000262260437
+            ],
+            "direction_cam": [
+              -0.05602104155236614,
+              0.8272917775772268,
+              -0.558972233350191
+            ],
+            "progress_span_m": 0.05380440231925868
+          },
+          "contact_geometry": {
+            "contact_point_P": [
+              -0.004856063984334469,
+              -0.004070249851793051,
+              -0.003831213340163231
+            ],
+            "target_touch_cam": [
+              -0.006359530612826347,
+              0.015691811218857765,
+              0.2750000059604645
+            ],
+            "tool_touch_cam": [
+              0.0384097583591938,
+              0.05906016379594803,
+              0.2540000081062317
+            ],
+            "surface_normal_cam": [
+              0.005073666808888285,
+              -0.5596083149675196,
+              -0.8287416917980692
+            ],
+            "tool_axis_cam": [
+              -0.9823465024718441,
+              -0.16437783297553477,
+              0.08930440698869431
+            ],
+            "affordance_contact_geometry": "line",
+            "affordance_force_mode": "pull",
+            "selected_affordance_hypothesis": {
+              "triple": {
+                "grasp_type": "power",
+                "contact_geometry": "line",
+                "force_mode": "pull"
+              },
+              "coherence": {
+                "status": "valid",
+                "weight": 1.0,
+                "reasons": [],
+                "suggestions": [],
+                "triple": {
+                  "grasp_type": "power",
+                  "contact_geometry": "line",
+                  "force_mode": "pull"
+                }
+              },
+              "raw_probability": 1.0,
+              "adjusted_probability": 1.0,
+              "adjusted_score": 1.0
+            },
+            "affordance_contact_normal_cam": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "affordance_wrench_basis": {
+              "axis": [
+                -0.20989301458199644,
+                0.8303459568752309,
+                -0.516207820873182
+              ],
+              "normal": [
+                0.0002277734396548825,
+                -0.5279271201490994,
+                -0.8492896466638097
+              ],
+              "tangent": [
+                -0.9777243325953088,
+                -0.1783775426224826,
+                0.1106190839729853
+              ]
+            },
+            "geometry_vlm_agreement": 0.77106377832545
+          },
+          "target_pose": {
+            "symbolic_refs": {
+              "start_ref": "current",
+              "end_ref": "H",
+              "center_ref": null,
+              "angle_ref": null
+            },
+            "tool_frame_cam": [
+              [
+                -0.9824954271316528,
+                -0.1862179934978485,
+                0.005073667038232088,
+                0.0384097583591938
+              ],
+              [
+                -0.1571202278137207,
+                0.8137271404266357,
+                -0.5596083402633667,
+                0.05906016379594803
+              ],
+              [
+                0.10008055716753006,
+                -0.5506097674369812,
+                -0.828741729259491,
+                0.2540000081062317
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "tool_grip_cam": [
+              0.059512197971343994,
+              -0.047804880887269974,
+              0.30000001192092896
+            ],
+            "grasp_frame_cam": [
+              [
+                0.9777243325953088,
+                -0.20989301458199644,
+                -0.0002277734396548825,
+                0.06510423550342263
+              ],
+              [
+                0.17837754262248262,
+                0.8303459568752309,
+                0.5279271201490994,
+                -0.04827289608436474
+              ],
+              [
+                -0.11061908397298531,
+                -0.516207820873182,
+                0.8492896466638097,
+                0.3000000142492354
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "grasp_quaternion_xyzw": [
+              -0.27298751301857577,
+              0.028861642434693798,
+              0.1015127543627769,
+              0.9562112653768452
+            ],
+            "grasp_width_m": 0.014157924093388764,
+            "grasp_width_mm": 14.157924093388765,
+            "grasp_width_px": 33.147733523638024
+          }
+        },
+        "Wi": {
+          "f_n_min": 0.0,
+          "f_n_max": 0.25,
+          "f_t_max": 0.1,
+          "tau_n_max": 0.0004,
+          "tau_t_max": 0.005598839294703655,
+          "frame": "contact_C",
+          "target_force_mode": "Off",
+          "contact_geometry": "line",
+          "force_mode": "pull",
+          "friction_mu": 0.4,
+          "provenance": "affordance_geometry_gws",
+          "contact_frame_cam": {
+            "normal": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "tangent_1": [
+              -0.9822010770265936,
+              -0.15861709430891074,
+              0.10060646937845323
+            ],
+            "tangent_2": [
+              -0.18699725916532917,
+              0.876196741332467,
+              -0.444197361026628
+            ],
+            "line_axis": [
+              -0.9822010770265936,
+              -0.15861709430891074,
+              0.10060646937845323
+            ]
+          },
+          "force_bounds_local": {
+            "normal": [
+              0.0,
+              0.25
+            ],
+            "tangent_1": [
+              -0.1,
+              0.1
+            ],
+            "tangent_2": [
+              -0.1,
+              0.1
+            ]
+          },
+          "torque_bounds_local": {
+            "normal": [
+              -0.0004,
+              0.0004
+            ],
+            "tangent_1": [
+              -0.005598839294703655,
+              0.005598839294703655
+            ],
+            "tangent_2": [
+              -0.0,
+              0.0
+            ]
+          },
+          "requested_force_n": 0.0,
+          "requested_torque_nm": null,
+          "patch_geometry": {
+            "point_radius_m": 0.004,
+            "line_half_length_m": 0.02239535717881462,
+            "surface_half_extent_t1_m": 0.02239535717881462,
+            "surface_half_extent_t2_m": 0.012
+          },
+          "gws_extreme_rays": [
+            {
+              "name": "line_1_pos",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": 0.07071067811865475,
+                "tangent_2": 0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                -0.0870982486874926,
+                -0.06303552166501843,
+                -0.2468611311729546
+              ],
+              "torque_cam": [
+                -0.005499185985356744,
+                -0.000888071620428445,
+                0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_1_neg",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": 0.07071067811865475,
+                "tangent_2": 0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": -0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                -0.0870982486874926,
+                -0.06303552166501843,
+                -0.2468611311729546
+              ],
+              "torque_cam": [
+                0.005499185985356744,
+                0.000888071620428445,
+                -0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_2_pos",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": 0.07071067811865475,
+                "tangent_2": -0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                -0.06065284268367209,
+                -0.186948453154967,
+                -0.18404213793953506
+              ],
+              "torque_cam": [
+                -0.005499185985356744,
+                -0.000888071620428445,
+                0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_2_neg",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": 0.07071067811865475,
+                "tangent_2": -0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": -0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                -0.06065284268367209,
+                -0.186948453154967,
+                -0.18404213793953506
+              ],
+              "torque_cam": [
+                0.005499185985356744,
+                0.000888071620428445,
+                -0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_3_pos",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": -0.07071067811865475,
+                "tangent_2": 0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                0.051805959723354375,
+                -0.04060367706543104,
+                -0.2610890345187028
+              ],
+              "torque_cam": [
+                -0.005499185985356744,
+                -0.000888071620428445,
+                0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_3_neg",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": -0.07071067811865475,
+                "tangent_2": 0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": -0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                0.051805959723354375,
+                -0.04060367706543104,
+                -0.2610890345187028
+              ],
+              "torque_cam": [
+                0.005499185985356744,
+                0.000888071620428445,
+                -0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_4_pos",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": -0.07071067811865475,
+                "tangent_2": -0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                0.07825136572717488,
+                -0.16451660855537958,
+                -0.19827004128528325
+              ],
+              "torque_cam": [
+                -0.005499185985356744,
+                -0.000888071620428445,
+                0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_4_neg",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": -0.07071067811865475,
+                "tangent_2": -0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": -0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                0.07825136572717488,
+                -0.16451660855537958,
+                -0.19827004128528325
+              ],
+              "torque_cam": [
+                0.005499185985356744,
+                0.000888071620428445,
+                -0.000563279454057484
+              ]
+            }
+          ],
+          "source_affordance": {
+            "contact_normal_3d": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "wrench_basis": {
+              "axis": [
+                -0.20989301458199644,
+                0.8303459568752309,
+                -0.516207820873182
+              ],
+              "normal": [
+                0.0002277734396548825,
+                -0.5279271201490994,
+                -0.8492896466638097
+              ],
+              "tangent": [
+                -0.9777243325953088,
+                -0.1783775426224826,
+                0.1106190839729853
+              ]
+            },
+            "geometry_vlm_agreement": 0.77106377832545,
+            "affordance_uncertainty": {
+              "grasp_type": 0.22893622167454997,
+              "contact_geometry": 0.22893622167454997,
+              "force_mode": 0.22893622167454997,
+              "aggregate": 0.22893622167454997
+            }
+          },
+          "force_class": "gentle"
+        },
+        "Theta_i": {
+          "pose_weight": 3.0,
+          "path_weight": 1.5,
+          "frame_align_weight": 2.1437755030468106,
+          "activation_logic": {
+            "confidence_source": "vlm3_fallback",
+            "interaction_confidence": 0.6797193788085133,
+            "perception_confidence": 0.5333333333333333,
+            "mode": "ApproachMove"
+          }
+        }
+      }
+    },
+    {
+      "step_id": 2,
+      "step_name": "step2",
+      "high_level_step": {
+        "interaction_intent": "Move(H,O)",
+        "wrench_intent": "Off",
+        "auxiliary_intents": []
+      },
+      "subgoal_program": {
+        "type": "terminal_constraint_manifold",
+        "objective": "terminal_mode_goal_satisfaction",
+        "terminal_residuals": [
+          {
+            "name": "frame_alignment",
+            "phase": "terminal",
+            "role": "pose_to_frame_alignment",
+            "enabled": true,
+            "weight_key": "frame_align_weight",
+            "weight": 2.1437755030468106,
+            "geometry_ref": "Li.line"
+          },
+          {
+            "name": "reach_pose",
+            "phase": "terminal",
+            "role": "terminal_reach",
+            "enabled": true,
+            "weight_key": "pose_weight",
+            "weight": 3.0,
+            "geometry_ref": "Li.target_pose"
+          }
+        ]
+      },
+      "path_program": {
+        "type": "path_constraint_bundle",
+        "objective": "receding_horizon_path_feasibility",
+        "mode_residuals": [],
+        "shared_regularizers": [
+          {
+            "name": "collision_avoidance",
+            "phase": "path",
+            "role": "shared_feasibility_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.5
+          },
+          {
+            "name": "smoothness",
+            "phase": "path",
+            "role": "shared_smoothness_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.5
+          },
+          {
+            "name": "ik_feasibility",
+            "phase": "path",
+            "role": "shared_kinematic_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.5
+          }
+        ]
+      },
+      "Pi": {
+        "program_id": "Pi_2",
+        "mode": "ApproachMove",
+        "contact_intent": "no_contact",
+        "Fi": {
+          "frame_id": "tool_target_best",
+          "selected_hypothesis": {
+            "name": "best",
+            "score": 0.6797193788085133,
+            "normal_sign": 1,
+            "tangent_sign": 1
+          },
+          "alternatives": [
+            {
+              "name": "alt_1",
+              "score": 0.6797193788085133,
+              "normal_sign": -1,
+              "tangent_sign": 1
+            },
+            {
+              "name": "alt_2",
+              "score": 0.6797193788085133,
+              "normal_sign": 1,
+              "tangent_sign": -1
+            },
+            {
+              "name": "alt_3",
+              "score": 0.6797193788085133,
+              "normal_sign": -1,
+              "tangent_sign": -1
+            }
+          ],
+          "execution_frame": "target_P",
+          "frame_selection_policy": "best_plus_alternatives"
+        },
+        "Li": {
+          "line": {
+            "start_cam": [
+              -0.008663414977490902,
+              -0.008663414977490902,
+              0.29600000381469727
+            ],
+            "end_cam": [
+              -0.011678049340844154,
+              0.03589918836951256,
+              0.26600000262260437
+            ],
+            "direction_cam": [
+              -0.05602104155236614,
+              0.8272917775772268,
+              -0.558972233350191
+            ],
+            "progress_span_m": 0.05380440231925868
+          },
+          "contact_geometry": {
+            "contact_point_P": [
+              -0.004856063984334469,
+              -0.004070249851793051,
+              -0.003831213340163231
+            ],
+            "target_touch_cam": [
+              -0.006359530612826347,
+              0.015691811218857765,
+              0.2750000059604645
+            ],
+            "tool_touch_cam": [
+              0.0384097583591938,
+              0.05906016379594803,
+              0.2540000081062317
+            ],
+            "surface_normal_cam": [
+              0.005073666808888285,
+              -0.5596083149675196,
+              -0.8287416917980692
+            ],
+            "tool_axis_cam": [
+              -0.9823465024718441,
+              -0.16437783297553477,
+              0.08930440698869431
+            ],
+            "affordance_contact_geometry": "line",
+            "affordance_force_mode": "pull",
+            "selected_affordance_hypothesis": {
+              "triple": {
+                "grasp_type": "power",
+                "contact_geometry": "line",
+                "force_mode": "pull"
+              },
+              "coherence": {
+                "status": "valid",
+                "weight": 1.0,
+                "reasons": [],
+                "suggestions": [],
+                "triple": {
+                  "grasp_type": "power",
+                  "contact_geometry": "line",
+                  "force_mode": "pull"
+                }
+              },
+              "raw_probability": 1.0,
+              "adjusted_probability": 1.0,
+              "adjusted_score": 1.0
+            },
+            "affordance_contact_normal_cam": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "affordance_wrench_basis": {
+              "axis": [
+                -0.20989301458199644,
+                0.8303459568752309,
+                -0.516207820873182
+              ],
+              "normal": [
+                0.0002277734396548825,
+                -0.5279271201490994,
+                -0.8492896466638097
+              ],
+              "tangent": [
+                -0.9777243325953088,
+                -0.1783775426224826,
+                0.1106190839729853
+              ]
+            },
+            "geometry_vlm_agreement": 0.77106377832545
+          },
+          "target_pose": {
+            "symbolic_refs": {
+              "start_ref": "H",
+              "end_ref": "O",
+              "center_ref": null,
+              "angle_ref": null
+            },
+            "tool_frame_cam": [
+              [
+                -0.9824954271316528,
+                -0.1862179934978485,
+                0.005073667038232088,
+                0.0384097583591938
+              ],
+              [
+                -0.1571202278137207,
+                0.8137271404266357,
+                -0.5596083402633667,
+                0.05906016379594803
+              ],
+              [
+                0.10008055716753006,
+                -0.5506097674369812,
+                -0.828741729259491,
+                0.2540000081062317
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "tool_grip_cam": [
+              0.059512197971343994,
+              -0.047804880887269974,
+              0.30000001192092896
+            ],
+            "grasp_frame_cam": [
+              [
+                0.9777243325953088,
+                -0.20989301458199644,
+                -0.0002277734396548825,
+                0.06510423550342263
+              ],
+              [
+                0.17837754262248262,
+                0.8303459568752309,
+                0.5279271201490994,
+                -0.04827289608436474
+              ],
+              [
+                -0.11061908397298531,
+                -0.516207820873182,
+                0.8492896466638097,
+                0.3000000142492354
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "grasp_quaternion_xyzw": [
+              -0.27298751301857577,
+              0.028861642434693798,
+              0.1015127543627769,
+              0.9562112653768452
+            ],
+            "grasp_width_m": 0.014157924093388764,
+            "grasp_width_mm": 14.157924093388765,
+            "grasp_width_px": 33.147733523638024
+          }
+        },
+        "Wi": {
+          "f_n_min": 0.0,
+          "f_n_max": 0.25,
+          "f_t_max": 0.1,
+          "tau_n_max": 0.0004,
+          "tau_t_max": 0.005598839294703655,
+          "frame": "contact_C",
+          "target_force_mode": "Off",
+          "contact_geometry": "line",
+          "force_mode": "pull",
+          "friction_mu": 0.4,
+          "provenance": "affordance_geometry_gws",
+          "contact_frame_cam": {
+            "normal": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "tangent_1": [
+              -0.9822010770265936,
+              -0.15861709430891074,
+              0.10060646937845323
+            ],
+            "tangent_2": [
+              -0.18699725916532917,
+              0.876196741332467,
+              -0.444197361026628
+            ],
+            "line_axis": [
+              -0.9822010770265936,
+              -0.15861709430891074,
+              0.10060646937845323
+            ]
+          },
+          "force_bounds_local": {
+            "normal": [
+              0.0,
+              0.25
+            ],
+            "tangent_1": [
+              -0.1,
+              0.1
+            ],
+            "tangent_2": [
+              -0.1,
+              0.1
+            ]
+          },
+          "torque_bounds_local": {
+            "normal": [
+              -0.0004,
+              0.0004
+            ],
+            "tangent_1": [
+              -0.005598839294703655,
+              0.005598839294703655
+            ],
+            "tangent_2": [
+              -0.0,
+              0.0
+            ]
+          },
+          "requested_force_n": 0.0,
+          "requested_torque_nm": null,
+          "patch_geometry": {
+            "point_radius_m": 0.004,
+            "line_half_length_m": 0.02239535717881462,
+            "surface_half_extent_t1_m": 0.02239535717881462,
+            "surface_half_extent_t2_m": 0.012
+          },
+          "gws_extreme_rays": [
+            {
+              "name": "line_1_pos",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": 0.07071067811865475,
+                "tangent_2": 0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                -0.0870982486874926,
+                -0.06303552166501843,
+                -0.2468611311729546
+              ],
+              "torque_cam": [
+                -0.005499185985356744,
+                -0.000888071620428445,
+                0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_1_neg",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": 0.07071067811865475,
+                "tangent_2": 0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": -0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                -0.0870982486874926,
+                -0.06303552166501843,
+                -0.2468611311729546
+              ],
+              "torque_cam": [
+                0.005499185985356744,
+                0.000888071620428445,
+                -0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_2_pos",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": 0.07071067811865475,
+                "tangent_2": -0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                -0.06065284268367209,
+                -0.186948453154967,
+                -0.18404213793953506
+              ],
+              "torque_cam": [
+                -0.005499185985356744,
+                -0.000888071620428445,
+                0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_2_neg",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": 0.07071067811865475,
+                "tangent_2": -0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": -0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                -0.06065284268367209,
+                -0.186948453154967,
+                -0.18404213793953506
+              ],
+              "torque_cam": [
+                0.005499185985356744,
+                0.000888071620428445,
+                -0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_3_pos",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": -0.07071067811865475,
+                "tangent_2": 0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                0.051805959723354375,
+                -0.04060367706543104,
+                -0.2610890345187028
+              ],
+              "torque_cam": [
+                -0.005499185985356744,
+                -0.000888071620428445,
+                0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_3_neg",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": -0.07071067811865475,
+                "tangent_2": 0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": -0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                0.051805959723354375,
+                -0.04060367706543104,
+                -0.2610890345187028
+              ],
+              "torque_cam": [
+                0.005499185985356744,
+                0.000888071620428445,
+                -0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_4_pos",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": -0.07071067811865475,
+                "tangent_2": -0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                0.07825136572717488,
+                -0.16451660855537958,
+                -0.19827004128528325
+              ],
+              "torque_cam": [
+                -0.005499185985356744,
+                -0.000888071620428445,
+                0.000563279454057484
+              ]
+            },
+            {
+              "name": "line_4_neg",
+              "force_local_contact": {
+                "normal": 0.25,
+                "tangent_1": -0.07071067811865475,
+                "tangent_2": -0.07071067811865475
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": -0.005598839294703655,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                0.07825136572717488,
+                -0.16451660855537958,
+                -0.19827004128528325
+              ],
+              "torque_cam": [
+                0.005499185985356744,
+                0.000888071620428445,
+                -0.000563279454057484
+              ]
+            }
+          ],
+          "source_affordance": {
+            "contact_normal_3d": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "wrench_basis": {
+              "axis": [
+                -0.20989301458199644,
+                0.8303459568752309,
+                -0.516207820873182
+              ],
+              "normal": [
+                0.0002277734396548825,
+                -0.5279271201490994,
+                -0.8492896466638097
+              ],
+              "tangent": [
+                -0.9777243325953088,
+                -0.1783775426224826,
+                0.1106190839729853
+              ]
+            },
+            "geometry_vlm_agreement": 0.77106377832545,
+            "affordance_uncertainty": {
+              "grasp_type": 0.22893622167454997,
+              "contact_geometry": 0.22893622167454997,
+              "force_mode": 0.22893622167454997,
+              "aggregate": 0.22893622167454997
+            }
+          },
+          "force_class": "gentle"
+        },
+        "Theta_i": {
+          "pose_weight": 3.0,
+          "path_weight": 1.5,
+          "frame_align_weight": 2.1437755030468106,
+          "activation_logic": {
+            "confidence_source": "vlm3_fallback",
+            "interaction_confidence": 0.6797193788085133,
+            "perception_confidence": 0.5333333333333333,
+            "mode": "ApproachMove"
+          }
+        }
+      }
+    },
+    {
+      "step_id": 3,
+      "step_name": "step3",
+      "high_level_step": {
+        "interaction_intent": "Linear(O,Q)",
+        "wrench_intent": "Const(5, 0)",
+        "auxiliary_intents": []
+      },
+      "subgoal_program": {
+        "type": "terminal_constraint_manifold",
+        "objective": "terminal_mode_goal_satisfaction",
+        "terminal_residuals": [
+          {
+            "name": "reach_line_end",
+            "phase": "terminal",
+            "role": "terminal_progress_target",
+            "enabled": true,
+            "weight_key": "progress_weight",
+            "weight": 4.287551006093621,
+            "geometry_ref": "Li.line"
+          },
+          {
+            "name": "frame_alignment",
+            "phase": "terminal",
+            "role": "pose_to_frame_alignment",
+            "enabled": true,
+            "weight_key": "frame_align_weight",
+            "weight": 3.2156632545702157,
+            "geometry_ref": "Li.line"
+          }
+        ]
+      },
+      "path_program": {
+        "type": "path_constraint_bundle",
+        "objective": "receding_horizon_path_feasibility",
+        "mode_residuals": [
+          {
+            "name": "contact_band",
+            "phase": "path",
+            "role": "contact_consistency",
+            "enabled": true,
+            "weight_key": "frame_align_weight",
+            "weight": 3.2156632545702157,
+            "tolerance_key": "contact_band_m",
+            "tolerance": [
+              0.0,
+              0.00512
+            ],
+            "geometry_ref": "Li.contact_geometry"
+          },
+          {
+            "name": "normal_alignment",
+            "phase": "path",
+            "role": "contact_normal_alignment",
+            "enabled": true,
+            "weight_key": "frame_align_weight",
+            "weight": 3.2156632545702157,
+            "tolerance_key": "normal_align_tol_deg",
+            "tolerance": 11.866666666666667,
+            "geometry_ref": "Li.contact_geometry"
+          },
+          {
+            "name": "line_following",
+            "phase": "path",
+            "role": "primitive_following",
+            "enabled": true,
+            "weight_key": "progress_weight",
+            "weight": 4.287551006093621,
+            "geometry_ref": "Li.line"
+          },
+          {
+            "name": "progress_monotonic",
+            "phase": "path",
+            "role": "progress_regularizer",
+            "enabled": true,
+            "weight_key": "progress_weight",
+            "weight": 4.287551006093621,
+            "geometry_ref": "Li.line",
+            "target_span_m": 0.05380440231925868
+          },
+          {
+            "name": "wrench_limits",
+            "phase": "path",
+            "role": "wrench_limit_compliance",
+            "enabled": true,
+            "weight_key": "wrench_weight",
+            "weight": 2.6797193788085134,
+            "wrench_ref": "Wi",
+            "frame": "contact_C",
+            "target_force_mode": "Const"
+          }
+        ],
+        "shared_regularizers": [
+          {
+            "name": "collision_avoidance",
+            "phase": "path",
+            "role": "shared_feasibility_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.0
+          },
+          {
+            "name": "smoothness",
+            "phase": "path",
+            "role": "shared_smoothness_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.0
+          },
+          {
+            "name": "ik_feasibility",
+            "phase": "path",
+            "role": "shared_kinematic_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.0
+          }
+        ]
+      },
+      "Pi": {
+        "program_id": "Pi_3",
+        "mode": "LinearMove",
+        "contact_intent": "maintain_contact",
+        "Fi": {
+          "frame_id": "tool_target_best",
+          "selected_hypothesis": {
+            "name": "best",
+            "score": 0.6797193788085133,
+            "normal_sign": 1,
+            "tangent_sign": 1
+          },
+          "alternatives": [
+            {
+              "name": "alt_1",
+              "score": 0.6797193788085133,
+              "normal_sign": -1,
+              "tangent_sign": 1
+            },
+            {
+              "name": "alt_2",
+              "score": 0.6797193788085133,
+              "normal_sign": 1,
+              "tangent_sign": -1
+            },
+            {
+              "name": "alt_3",
+              "score": 0.6797193788085133,
+              "normal_sign": -1,
+              "tangent_sign": -1
+            }
+          ],
+          "execution_frame": "target_P",
+          "frame_selection_policy": "best_plus_alternatives"
+        },
+        "Li": {
+          "line": {
+            "start_cam": [
+              -0.008663414977490902,
+              -0.008663414977490902,
+              0.29600000381469727
+            ],
+            "end_cam": [
+              -0.011678049340844154,
+              0.03589918836951256,
+              0.26600000262260437
+            ],
+            "direction_cam": [
+              -0.05602104155236614,
+              0.8272917775772268,
+              -0.558972233350191
+            ],
+            "progress_span_m": 0.05380440231925868
+          },
+          "contact_geometry": {
+            "contact_point_P": [
+              -0.004856063984334469,
+              -0.004070249851793051,
+              -0.003831213340163231
+            ],
+            "target_touch_cam": [
+              -0.006359530612826347,
+              0.015691811218857765,
+              0.2750000059604645
+            ],
+            "tool_touch_cam": [
+              0.0384097583591938,
+              0.05906016379594803,
+              0.2540000081062317
+            ],
+            "surface_normal_cam": [
+              0.005073666808888285,
+              -0.5596083149675196,
+              -0.8287416917980692
+            ],
+            "tool_axis_cam": [
+              -0.9823465024718441,
+              -0.16437783297553477,
+              0.08930440698869431
+            ],
+            "affordance_contact_geometry": "line",
+            "affordance_force_mode": "pull",
+            "selected_affordance_hypothesis": {
+              "triple": {
+                "grasp_type": "power",
+                "contact_geometry": "point",
+                "force_mode": "push"
+              },
+              "coherence": {
+                "status": "valid",
+                "weight": 1.0,
+                "reasons": [],
+                "suggestions": [],
+                "triple": {
+                  "grasp_type": "power",
+                  "contact_geometry": "point",
+                  "force_mode": "push"
+                }
+              },
+              "raw_probability": 0.0,
+              "adjusted_probability": 0.0,
+              "adjusted_score": 0.0
+            },
+            "affordance_contact_normal_cam": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "affordance_wrench_basis": {
+              "axis": [
+                -0.20989301458199644,
+                0.8303459568752309,
+                -0.516207820873182
+              ],
+              "normal": [
+                0.0002277734396548825,
+                -0.5279271201490994,
+                -0.8492896466638097
+              ],
+              "tangent": [
+                -0.9777243325953088,
+                -0.1783775426224826,
+                0.1106190839729853
+              ]
+            },
+            "geometry_vlm_agreement": 0.77106377832545
+          },
+          "target_pose": {
+            "symbolic_refs": {
+              "start_ref": "O",
+              "end_ref": "Q",
+              "center_ref": null,
+              "angle_ref": null
+            },
+            "tool_frame_cam": [
+              [
+                -0.9824954271316528,
+                -0.1862179934978485,
+                0.005073667038232088,
+                0.0384097583591938
+              ],
+              [
+                -0.1571202278137207,
+                0.8137271404266357,
+                -0.5596083402633667,
+                0.05906016379594803
+              ],
+              [
+                0.10008055716753006,
+                -0.5506097674369812,
+                -0.828741729259491,
+                0.2540000081062317
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "tool_grip_cam": [
+              0.059512197971343994,
+              -0.047804880887269974,
+              0.30000001192092896
+            ],
+            "grasp_frame_cam": [
+              [
+                0.9777243325953088,
+                -0.20989301458199644,
+                -0.0002277734396548825,
+                0.06510423550342263
+              ],
+              [
+                0.17837754262248262,
+                0.8303459568752309,
+                0.5279271201490994,
+                -0.04827289608436474
+              ],
+              [
+                -0.11061908397298531,
+                -0.516207820873182,
+                0.8492896466638097,
+                0.3000000142492354
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "grasp_quaternion_xyzw": [
+              -0.27298751301857577,
+              0.028861642434693798,
+              0.1015127543627769,
+              0.9562112653768452
+            ],
+            "grasp_width_m": 0.014157924093388764,
+            "grasp_width_mm": 14.157924093388765,
+            "grasp_width_px": 33.147733523638024
+          }
+        },
+        "Wi": {
+          "f_n_min": 2.25,
+          "f_n_max": 5.0,
+          "f_t_max": 2.0,
+          "tau_n_max": 0.008,
+          "tau_t_max": 0.0,
+          "frame": "contact_C",
+          "target_force_mode": "Const",
+          "contact_geometry": "point",
+          "force_mode": "push",
+          "friction_mu": 0.4,
+          "provenance": "affordance_geometry_gws",
+          "contact_frame_cam": {
+            "normal": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "tangent_1": [
+              -0.9822010770265936,
+              -0.15861709430891074,
+              0.10060646937845323
+            ],
+            "tangent_2": [
+              -0.18699725916532917,
+              0.876196741332467,
+              -0.444197361026628
+            ],
+            "line_axis": [
+              -0.9822010770265936,
+              -0.15861709430891074,
+              0.10060646937845323
+            ]
+          },
+          "force_bounds_local": {
+            "normal": [
+              2.25,
+              5.0
+            ],
+            "tangent_1": [
+              -2.0,
+              2.0
+            ],
+            "tangent_2": [
+              -2.0,
+              2.0
+            ]
+          },
+          "torque_bounds_local": {
+            "normal": [
+              -0.008,
+              0.008
+            ],
+            "tangent_1": [
+              -0.0,
+              0.0
+            ],
+            "tangent_2": [
+              -0.0,
+              0.0
+            ]
+          },
+          "requested_force_n": 5.0,
+          "requested_torque_nm": 0.0,
+          "patch_geometry": {
+            "point_radius_m": 0.004,
+            "line_half_length_m": 0.02239535717881462,
+            "surface_half_extent_t1_m": 0.02239535717881462,
+            "surface_half_extent_t2_m": 0.012
+          },
+          "gws_extreme_rays": [
+            {
+              "name": "cone_1",
+              "force_local_contact": {
+                "normal": 5.0,
+                "tangent_1": 1.414213562373095,
+                "tangent_2": 1.414213562373095
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.0,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                -1.741964973749852,
+                -1.2607104333003687,
+                -4.937222623459092
+              ],
+              "torque_cam": [
+                -0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "cone_2",
+              "force_local_contact": {
+                "normal": 5.0,
+                "tangent_1": 1.414213562373095,
+                "tangent_2": -1.414213562373095
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.0,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                -1.2130568536734418,
+                -3.73896906309934,
+                -3.6808427587907007
+              ],
+              "torque_cam": [
+                -0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "cone_3",
+              "force_local_contact": {
+                "normal": 5.0,
+                "tangent_1": -1.414213562373095,
+                "tangent_2": 1.414213562373095
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.0,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                1.0361191944670873,
+                -0.8120735413086211,
+                -5.2217806903740565
+              ],
+              "torque_cam": [
+                -0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "cone_4",
+              "force_local_contact": {
+                "normal": 5.0,
+                "tangent_1": -1.414213562373095,
+                "tangent_2": -1.414213562373095
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.0,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                1.5650273145434974,
+                -3.2903321711075924,
+                -3.9654008257056654
+              ],
+              "torque_cam": [
+                -0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "source_affordance": {
+            "contact_normal_3d": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "wrench_basis": {
+              "axis": [
+                -0.20989301458199644,
+                0.8303459568752309,
+                -0.516207820873182
+              ],
+              "normal": [
+                0.0002277734396548825,
+                -0.5279271201490994,
+                -0.8492896466638097
+              ],
+              "tangent": [
+                -0.9777243325953088,
+                -0.1783775426224826,
+                0.1106190839729853
+              ]
+            },
+            "geometry_vlm_agreement": 0.77106377832545,
+            "affordance_uncertainty": {
+              "grasp_type": 0.22893622167454997,
+              "contact_geometry": 0.22893622167454997,
+              "force_mode": 0.22893622167454997,
+              "aggregate": 0.22893622167454997
+            }
+          },
+          "force_class": "nominal"
+        },
+        "Theta_i": {
+          "contact_band_m": [
+            0.0,
+            0.00512
+          ],
+          "normal_align_tol_deg": 11.866666666666667,
+          "progress_weight": 4.287551006093621,
+          "frame_align_weight": 3.2156632545702157,
+          "wrench_weight": 2.6797193788085134,
+          "activation_logic": {
+            "confidence_source": "vlm3_fallback",
+            "interaction_confidence": 0.6797193788085133,
+            "perception_confidence": 0.5333333333333333,
+            "mode": "LinearMove"
+          }
+        }
+      }
+    },
+    {
+      "step_id": 4,
+      "step_name": "step4",
+      "high_level_step": {
+        "interaction_intent": "Linear(Q, z+5)",
+        "wrench_intent": "Off",
+        "auxiliary_intents": []
+      },
+      "subgoal_program": {
+        "type": "terminal_constraint_manifold",
+        "objective": "terminal_mode_goal_satisfaction",
+        "terminal_residuals": [
+          {
+            "name": "clearance_increase",
+            "phase": "terminal",
+            "role": "terminal_clearance_target",
+            "enabled": true,
+            "weight_key": "release_weight",
+            "weight": 2.0,
+            "geometry_ref": "Li.target_pose"
+          },
+          {
+            "name": "reach_pose",
+            "phase": "terminal",
+            "role": "terminal_reach",
+            "enabled": true,
+            "weight_key": "pose_weight",
+            "weight": 1.0,
+            "geometry_ref": "Li.target_pose"
+          }
+        ]
+      },
+      "path_program": {
+        "type": "path_constraint_bundle",
+        "objective": "receding_horizon_path_feasibility",
+        "mode_residuals": [
+          {
+            "name": "clearance_growth",
+            "phase": "path",
+            "role": "clearance_release_regularizer",
+            "enabled": true,
+            "weight_key": "release_weight",
+            "weight": 2.0,
+            "tolerance_key": "clearance_margin_m",
+            "tolerance": 0.01,
+            "geometry_ref": "Li.target_pose"
+          }
+        ],
+        "shared_regularizers": [
+          {
+            "name": "collision_avoidance",
+            "phase": "path",
+            "role": "shared_feasibility_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.5
+          },
+          {
+            "name": "smoothness",
+            "phase": "path",
+            "role": "shared_smoothness_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.5
+          },
+          {
+            "name": "ik_feasibility",
+            "phase": "path",
+            "role": "shared_kinematic_regularizer",
+            "enabled": true,
+            "weight_key": "path_weight",
+            "weight": 1.5
+          }
+        ]
+      },
+      "Pi": {
+        "program_id": "Pi_4",
+        "mode": "RetractMove",
+        "contact_intent": "break_contact",
+        "Fi": {
+          "frame_id": "tool_target_best",
+          "selected_hypothesis": {
+            "name": "best",
+            "score": 0.6797193788085133,
+            "normal_sign": 1,
+            "tangent_sign": 1
+          },
+          "alternatives": [
+            {
+              "name": "alt_1",
+              "score": 0.6797193788085133,
+              "normal_sign": -1,
+              "tangent_sign": 1
+            },
+            {
+              "name": "alt_2",
+              "score": 0.6797193788085133,
+              "normal_sign": 1,
+              "tangent_sign": -1
+            },
+            {
+              "name": "alt_3",
+              "score": 0.6797193788085133,
+              "normal_sign": -1,
+              "tangent_sign": -1
+            }
+          ],
+          "execution_frame": "target_P",
+          "frame_selection_policy": "best_plus_alternatives"
+        },
+        "Li": {
+          "line": {
+            "start_cam": [
+              -0.008663414977490902,
+              -0.008663414977490902,
+              0.29600000381469727
+            ],
+            "end_cam": [
+              -0.011678049340844154,
+              0.03589918836951256,
+              0.26600000262260437
+            ],
+            "direction_cam": [
+              -0.05602104155236614,
+              0.8272917775772268,
+              -0.558972233350191
+            ],
+            "progress_span_m": 0.05380440231925868
+          },
+          "contact_geometry": {
+            "contact_point_P": [
+              -0.004856063984334469,
+              -0.004070249851793051,
+              -0.003831213340163231
+            ],
+            "target_touch_cam": [
+              -0.006359530612826347,
+              0.015691811218857765,
+              0.2750000059604645
+            ],
+            "tool_touch_cam": [
+              0.0384097583591938,
+              0.05906016379594803,
+              0.2540000081062317
+            ],
+            "surface_normal_cam": [
+              0.005073666808888285,
+              -0.5596083149675196,
+              -0.8287416917980692
+            ],
+            "tool_axis_cam": [
+              -0.9823465024718441,
+              -0.16437783297553477,
+              0.08930440698869431
+            ],
+            "affordance_contact_geometry": "line",
+            "affordance_force_mode": "pull",
+            "selected_affordance_hypothesis": {
+              "triple": {
+                "grasp_type": "power",
+                "contact_geometry": "point",
+                "force_mode": "push"
+              },
+              "coherence": {
+                "status": "valid",
+                "weight": 1.0,
+                "reasons": [],
+                "suggestions": [],
+                "triple": {
+                  "grasp_type": "power",
+                  "contact_geometry": "point",
+                  "force_mode": "push"
+                }
+              },
+              "raw_probability": 0.0,
+              "adjusted_probability": 0.0,
+              "adjusted_score": 0.0
+            },
+            "affordance_contact_normal_cam": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "affordance_wrench_basis": {
+              "axis": [
+                -0.20989301458199644,
+                0.8303459568752309,
+                -0.516207820873182
+              ],
+              "normal": [
+                0.0002277734396548825,
+                -0.5279271201490994,
+                -0.8492896466638097
+              ],
+              "tangent": [
+                -0.9777243325953088,
+                -0.1783775426224826,
+                0.1106190839729853
+              ]
+            },
+            "geometry_vlm_agreement": 0.77106377832545
+          },
+          "target_pose": {
+            "symbolic_refs": {
+              "start_ref": "Q",
+              "end_ref": "z+5",
+              "center_ref": null,
+              "angle_ref": null
+            },
+            "tool_frame_cam": [
+              [
+                -0.9824954271316528,
+                -0.1862179934978485,
+                0.005073667038232088,
+                0.0384097583591938
+              ],
+              [
+                -0.1571202278137207,
+                0.8137271404266357,
+                -0.5596083402633667,
+                0.05906016379594803
+              ],
+              [
+                0.10008055716753006,
+                -0.5506097674369812,
+                -0.828741729259491,
+                0.2540000081062317
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "tool_grip_cam": [
+              0.059512197971343994,
+              -0.047804880887269974,
+              0.30000001192092896
+            ],
+            "grasp_frame_cam": [
+              [
+                0.9777243325953088,
+                -0.20989301458199644,
+                -0.0002277734396548825,
+                0.06510423550342263
+              ],
+              [
+                0.17837754262248262,
+                0.8303459568752309,
+                0.5279271201490994,
+                -0.04827289608436474
+              ],
+              [
+                -0.11061908397298531,
+                -0.516207820873182,
+                0.8492896466638097,
+                0.3000000142492354
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "grasp_quaternion_xyzw": [
+              -0.27298751301857577,
+              0.028861642434693798,
+              0.1015127543627769,
+              0.9562112653768452
+            ],
+            "grasp_width_m": 0.014157924093388764,
+            "grasp_width_mm": 14.157924093388765,
+            "grasp_width_px": 33.147733523638024
+          }
+        },
+        "Wi": {
+          "f_n_min": 0.0,
+          "f_n_max": 0.0,
+          "f_t_max": 0.0,
+          "tau_n_max": 0.0,
+          "tau_t_max": 0.0,
+          "frame": "contact_C",
+          "target_force_mode": "Off",
+          "contact_geometry": "point",
+          "force_mode": "push",
+          "friction_mu": 0.4,
+          "provenance": "affordance_geometry_gws",
+          "contact_frame_cam": {
+            "normal": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "tangent_1": [
+              -0.9822010770265936,
+              -0.15861709430891074,
+              0.10060646937845323
+            ],
+            "tangent_2": [
+              -0.18699725916532917,
+              0.876196741332467,
+              -0.444197361026628
+            ],
+            "line_axis": [
+              -0.9822010770265936,
+              -0.15861709430891074,
+              0.10060646937845323
+            ]
+          },
+          "force_bounds_local": {
+            "normal": [
+              0.0,
+              0.0
+            ],
+            "tangent_1": [
+              -0.0,
+              0.0
+            ],
+            "tangent_2": [
+              -0.0,
+              0.0
+            ]
+          },
+          "torque_bounds_local": {
+            "normal": [
+              -0.0,
+              0.0
+            ],
+            "tangent_1": [
+              -0.0,
+              0.0
+            ],
+            "tangent_2": [
+              -0.0,
+              0.0
+            ]
+          },
+          "requested_force_n": 0.0,
+          "requested_torque_nm": null,
+          "patch_geometry": {
+            "point_radius_m": 0.004,
+            "line_half_length_m": 0.02239535717881462,
+            "surface_half_extent_t1_m": 0.02239535717881462,
+            "surface_half_extent_t2_m": 0.012
+          },
+          "gws_extreme_rays": [
+            {
+              "name": "cone_1",
+              "force_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.0,
+                "tangent_2": 0.0
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.0,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                -0.0,
+                0.0,
+                0.0
+              ],
+              "torque_cam": [
+                -0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "cone_2",
+              "force_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.0,
+                "tangent_2": -0.0
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.0,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                0.0,
+                -0.0,
+                0.0
+              ],
+              "torque_cam": [
+                -0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "cone_3",
+              "force_local_contact": {
+                "normal": 0.0,
+                "tangent_1": -0.0,
+                "tangent_2": 0.0
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.0,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                0.0,
+                0.0,
+                -0.0
+              ],
+              "torque_cam": [
+                -0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "cone_4",
+              "force_local_contact": {
+                "normal": 0.0,
+                "tangent_1": -0.0,
+                "tangent_2": -0.0
+              },
+              "torque_local_contact": {
+                "normal": 0.0,
+                "tangent_1": 0.0,
+                "tangent_2": 0.0
+              },
+              "force_cam": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "torque_cam": [
+                -0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "source_affordance": {
+            "contact_normal_3d": [
+              -0.01769376592063543,
+              -0.45510426044079605,
+              -0.8902623449164757
+            ],
+            "wrench_basis": {
+              "axis": [
+                -0.20989301458199644,
+                0.8303459568752309,
+                -0.516207820873182
+              ],
+              "normal": [
+                0.0002277734396548825,
+                -0.5279271201490994,
+                -0.8492896466638097
+              ],
+              "tangent": [
+                -0.9777243325953088,
+                -0.1783775426224826,
+                0.1106190839729853
+              ]
+            },
+            "geometry_vlm_agreement": 0.77106377832545,
+            "affordance_uncertainty": {
+              "grasp_type": 0.22893622167454997,
+              "contact_geometry": 0.22893622167454997,
+              "force_mode": 0.22893622167454997,
+              "aggregate": 0.22893622167454997
+            }
+          },
+          "force_class": "gentle"
+        },
+        "Theta_i": {
+          "clearance_margin_m": 0.01,
+          "path_weight": 1.5,
+          "release_weight": 2.0,
+          "activation_logic": {
+            "confidence_source": "vlm3_fallback",
+            "interaction_confidence": 0.6797193788085133,
+            "perception_confidence": 0.5333333333333333,
+            "mode": "RetractMove"
+          }
+        }
+      }
+    }
+  ],
+  "source": {
+    "vlm3_results_json": "/home/rup/RegioManip/results/regiomanip2/color_000012_run3/interaction_lift/interaction_lift_results.json",
+    "high_level_plan_json": "/home/rup/RegioManip/regiomanip/data/high_level_plan.json",
+    "symbolic_grounding_json": "/home/rup/RegioManip/regiomanip/data/symbolic_grounding.json",
+    "action_templates_json": "/home/rup/RegioManip/regiomanip/configs/action_templates.json",
+    "wrench_profiles_json": "/home/rup/RegioManip/regiomanip/configs/wrench_profiles.json",
+    "confidence_json": null
+  },
+  "output_path": "/home/rup/RegioManip/results/regiomanip2/color_000012_run3/compiled_action_program.json"
+}

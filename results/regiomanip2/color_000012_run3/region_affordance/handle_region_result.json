@@ -1,0 +1,835 @@
+{
+  "object_name": "scraper",
+  "ok": true,
+  "status": "accepted",
+  "selected_handle_id": 2,
+  "selected_handle_ids": [
+    2
+  ],
+  "confidence": 1.0,
+  "selected_work_end_id": 1,
+  "selected_work_end_ids": [
+    1
+  ],
+  "work_end_ok": true,
+  "work_end_status": "accepted",
+  "work_end_confidence": 1.0,
+  "axis_direction": [
+    -0.12072118274867948,
+    0.9926864540406302
+  ],
+  "vlm": {
+    "client_status": null,
+    "vlm1_raw": "```json\n{\n  \"handle_id\": 2,\n  \"work_end_id\": 1,\n  \"tool_morphology\": \"inline\",\n  \"contact_face\": \"primary\",\n  \"face_direction\": null,\n  \"target_region\": \"border\",\n  \"confidence\": 1.0,\n  \"grasp_type\": \"power\",\n  \"contact_geometry\": \"line\",\n  \"force_mode\": \"pull\",\n  \"task_semantic\": \"scrape_blade\",\n  \"handle_confidence\": 1.0,\n  \"work_end_confidence\": 1.0,\n  \"attribute_confidence\": {\n    \"grasp_type\": 1.0,\n    \"contact_geometry\": 1.0,\n    \"force_mode\": 1.0\n  },\n  \"reason\": \"Clear elongated handle, flat scraper blade for line contact.\"\n}\n```"
+  },
+  "artifacts": {
+    "rgb_crop_path": "results/regiomanip2/color_000012_run3/region_affordance/rgb_crop.png",
+    "candidate_grid_path": "results/regiomanip2/color_000012_run3/region_affordance/candidate_grid.png",
+    "skeleton_overlay_path": "results/regiomanip2/color_000012_run3/region_affordance/skeleton_overlay.png",
+    "depth_colormap_path": "results/regiomanip2/color_000012_run3/region_affordance/depth_colormap.png",
+    "handle_mask_path": null,
+    "work_end_mask_path": null,
+    "handle_fullmask_path": "results/regiomanip2/color_000012_run3/region_affordance/_masks/scraper__handle_fullmask.png",
+    "work_end_fullmask_path": "results/regiomanip2/color_000012_run3/region_affordance/_masks/scraper__workend_fullmask.png",
+    "handle_vis_path": "results/regiomanip2/color_000012_run3/region_affordance/scraper__pgl_handle.png",
+    "work_end_vis_path": "results/regiomanip2/color_000012_run3/region_affordance/scraper__pgl_work_end.png",
+    "axis_image_path": "results/regiomanip2/color_000012_run3/region_affordance/scraper__axis.png",
+    "skeleton_image_path": "results/regiomanip2/color_000012_run3/region_affordance/scraper__skeleton.png",
+    "combined_pgl_path": "results/regiomanip2/color_000012_run3/region_affordance/scraper__pgl_combined.png",
+    "geometry_3d_path": "results/regiomanip2/color_000012_run3/region_affordance/scraper__geometry_3d.png",
+    "contact_overlay_path": "results/regiomanip2/color_000012_run3/region_affordance/scraper__contact_overlay.png",
+    "crop_bb": [
+      347,
+      74,
+      481,
+      405
+    ]
+  },
+  "grip_point_xy": [
+    95,
+    68
+  ],
+  "work_end_edge": null,
+  "work_end_contact_xy": [
+    66,
+    309
+  ],
+  "grip_target_line": [
+    -0.12072118274867948,
+    0.9926864540406302
+  ],
+  "geometry_family": "vlm_direct",
+  "agreement": "vlm_direct",
+  "reasons": [],
+  "geometry_scores": [],
+  "fused_scores": [],
+  "work_end_agreement": "vlm_direct",
+  "work_end_reasons": [],
+  "work_end_geometry_scores": [],
+  "work_end_fused_scores": [],
+  "candidate_features": [],
+  "grip_anchor_label": "G",
+  "work_end_side_label": "C",
+  "contact_face": "primary",
+  "target_region": "border",
+  "tool_morphology": null,
+  "pgl_handle": null,
+  "pgl_work_end": null,
+  "geometry_top_id": null,
+  "vlm_top_id": null,
+  "work_end_geometry_top_id": null,
+  "work_end_vlm_top_id": null,
+  "grip_point_3d": [
+    0.06510423550342263,
+    -0.04827289608436474,
+    0.3000000142492354
+  ],
+  "work_end_contact_3d": [
+    0.04303116036477109,
+    0.05915476138763517,
+    0.25400001206435263
+  ],
+  "axis_direction_3d": [
+    -0.20989301458199644,
+    0.8303459568752309,
+    -0.516207820873182
+  ],
+  "contact_normal_3d": [
+    -0.01769376592063543,
+    -0.45510426044079605,
+    -0.8902623449164757
+  ],
+  "grasp_rotation_cam": [
+    [
+      0.9777243325953088,
+      -0.20989301458199644,
+      -0.0002277734396548825
+    ],
+    [
+      0.17837754262248262,
+      0.8303459568752309,
+      0.5279271201490994
+    ],
+    [
+      -0.11061908397298531,
+      -0.516207820873182,
+      0.8492896466638097
+    ]
+  ],
+  "grasp_frame_cam": [
+    [
+      0.9777243325953088,
+      -0.20989301458199644,
+      -0.0002277734396548825,
+      0.06510423550342263
+    ],
+    [
+      0.17837754262248262,
+      0.8303459568752309,
+      0.5279271201490994,
+      -0.04827289608436474
+    ],
+    [
+      -0.11061908397298531,
+      -0.516207820873182,
+      0.8492896466638097,
+      0.3000000142492354
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "grasp_quaternion_xyzw": [
+    -0.27298751301857577,
+    0.028861642434693798,
+    0.1015127543627769,
+    0.9562112653768452
+  ],
+  "grasp_approach_axis_3d": [
+    -0.0002277734396548825,
+    0.5279271201490994,
+    0.8492896466638097
+  ],
+  "grasp_closing_axis_3d": [
+    0.9777243325953088,
+    0.17837754262248262,
+    -0.11061908397298531
+  ],
+  "grip_point_xy_global": [
+    442.0,
+    142.0
+  ],
+  "work_end_contact_xy_global": [
+    413.0,
+    383.0
+  ],
+  "work_end_edge_points_global": [
+    [
+      467.0,
+      388.0
+    ],
+    [
+      359.0,
+      368.0
+    ]
+  ],
+  "grasp_type": "power",
+  "contact_geometry": "line",
+  "force_mode": "pull",
+  "task_semantic": "scrape_blade",
+  "affordance_uncertainty": {
+    "grasp_type": 0.22893622167454997,
+    "contact_geometry": 0.22893622167454997,
+    "force_mode": 0.22893622167454997,
+    "aggregate": 0.22893622167454997
+  },
+  "geometry_vlm_agreement": 0.77106377832545,
+  "geometry_vlm_agreement_details": {
+    "method": "jsd_categorical_agreement",
+    "role_agreement": 1.0,
+    "role_components": {
+      "handle_match": 1.0,
+      "work_end_match": 1.0
+    },
+    "attribute_jsd_bits": {
+      "grasp_type": 0.06276448651079414,
+      "contact_geometry": 0.7819527692351691,
+      "force_mode": 0.07102763095223658
+    },
+    "attribute_agreement": {
+      "grasp_type": 0.9372355134892059,
+      "contact_geometry": 0.2180472307648309,
+      "force_mode": 0.9289723690477634
+    },
+    "geometry_distributions": {
+      "grasp_type": {
+        "predicted": "power",
+        "confidence": 0.84,
+        "distribution": {
+          "power": 0.88,
+          "precision": 0.04000000000000001,
+          "pinch": 0.04000000000000001,
+          "hook": 0.04000000000000001
+        }
+      },
+      "contact_geometry": {
+        "predicted": "surface",
+        "confidence": 0.74,
+        "distribution": {
+          "point": 0.08666666666666667,
+          "line": 0.08666666666666667,
+          "surface": 0.8266666666666667
+        }
+      },
+      "force_mode": {
+        "predicted": "pull",
+        "confidence": 0.82,
+        "distribution": {
+          "push": 0.04500000000000001,
+          "pull": 0.865,
+          "torque": 0.04500000000000001,
+          "normal": 0.04500000000000001
+        }
+      }
+    },
+    "vlm_distributions": {
+      "grasp_type": {
+        "predicted": "power",
+        "confidence": 1.0,
+        "distribution": {
+          "power": 1.0,
+          "precision": 0.0,
+          "pinch": 0.0,
+          "hook": 0.0
+        }
+      },
+      "contact_geometry": {
+        "predicted": "line",
+        "confidence": 1.0,
+        "distribution": {
+          "point": 0.0,
+          "line": 1.0,
+          "surface": 0.0
+        }
+      },
+      "force_mode": {
+        "predicted": "pull",
+        "confidence": 1.0,
+        "distribution": {
+          "push": 0.0,
+          "pull": 1.0,
+          "torque": 0.0,
+          "normal": 0.0
+        }
+      }
+    },
+    "comparable_components": [
+      "role",
+      "grasp_type",
+      "contact_geometry",
+      "force_mode"
+    ],
+    "fallback_used": false,
+    "score": 0.77106377832545,
+    "component_count": 4
+  },
+  "coherence_report": {
+    "current_triple": {
+      "grasp_type": "power",
+      "contact_geometry": "line",
+      "force_mode": "pull"
+    },
+    "current_coherence": {
+      "status": "valid",
+      "weight": 1.0,
+      "reasons": [],
+      "suggestions": [],
+      "triple": {
+        "grasp_type": "power",
+        "contact_geometry": "line",
+        "force_mode": "pull"
+      }
+    },
+    "current_raw_joint": 1.0,
+    "current_adjusted_score": 1.0,
+    "fused_distributions": {
+      "grasp_type": {
+        "power": 1.0,
+        "precision": 0.0,
+        "pinch": 0.0,
+        "hook": 0.0
+      },
+      "contact_geometry": {
+        "point": 0.0,
+        "line": 1.0,
+        "surface": 0.0
+      },
+      "force_mode": {
+        "push": 0.0,
+        "pull": 1.0,
+        "torque": 0.0,
+        "normal": 0.0
+      }
+    },
+    "top_hypotheses": [
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "line",
+          "force_mode": "pull"
+        },
+        "raw_joint": 1.0,
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "line",
+            "force_mode": "pull"
+          }
+        },
+        "adjusted_score": 1.0,
+        "raw_probability": 1.0,
+        "adjusted_probability": 1.0
+      },
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "push"
+        },
+        "raw_joint": 0.0,
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "point",
+            "force_mode": "push"
+          }
+        },
+        "adjusted_score": 0.0,
+        "raw_probability": 0.0,
+        "adjusted_probability": 0.0
+      },
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "pull"
+        },
+        "raw_joint": 0.0,
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "point",
+            "force_mode": "pull"
+          }
+        },
+        "adjusted_score": 0.0,
+        "raw_probability": 0.0,
+        "adjusted_probability": 0.0
+      },
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "torque"
+        },
+        "raw_joint": 0.0,
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "point",
+            "force_mode": "torque"
+          }
+        },
+        "adjusted_score": 0.0,
+        "raw_probability": 0.0,
+        "adjusted_probability": 0.0
+      },
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "normal"
+        },
+        "raw_joint": 0.0,
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "point",
+            "force_mode": "normal"
+          }
+        },
+        "adjusted_score": 0.0,
+        "raw_probability": 0.0,
+        "adjusted_probability": 0.0
+      }
+    ],
+    "selected_source": "initial",
+    "selected_triple": {
+      "grasp_type": "power",
+      "contact_geometry": "line",
+      "force_mode": "pull"
+    },
+    "selected_coherence": {
+      "status": "valid",
+      "weight": 1.0,
+      "reasons": [],
+      "suggestions": [],
+      "triple": {
+        "grasp_type": "power",
+        "contact_geometry": "line",
+        "force_mode": "pull"
+      }
+    },
+    "affordance_hypotheses": [
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "line",
+          "force_mode": "pull"
+        },
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "line",
+            "force_mode": "pull"
+          }
+        },
+        "raw_probability": 1.0,
+        "adjusted_probability": 1.0,
+        "adjusted_score": 1.0
+      },
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "push"
+        },
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "point",
+            "force_mode": "push"
+          }
+        },
+        "raw_probability": 0.0,
+        "adjusted_probability": 0.0,
+        "adjusted_score": 0.0
+      },
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "pull"
+        },
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "point",
+            "force_mode": "pull"
+          }
+        },
+        "raw_probability": 0.0,
+        "adjusted_probability": 0.0,
+        "adjusted_score": 0.0
+      },
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "torque"
+        },
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "point",
+            "force_mode": "torque"
+          }
+        },
+        "raw_probability": 0.0,
+        "adjusted_probability": 0.0,
+        "adjusted_score": 0.0
+      },
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "normal"
+        },
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "point",
+            "force_mode": "normal"
+          }
+        },
+        "raw_probability": 0.0,
+        "adjusted_probability": 0.0,
+        "adjusted_score": 0.0
+      },
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "line",
+          "force_mode": "push"
+        },
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "line",
+            "force_mode": "push"
+          }
+        },
+        "raw_probability": 0.0,
+        "adjusted_probability": 0.0,
+        "adjusted_score": 0.0
+      },
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "line",
+          "force_mode": "torque"
+        },
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "line",
+            "force_mode": "torque"
+          }
+        },
+        "raw_probability": 0.0,
+        "adjusted_probability": 0.0,
+        "adjusted_score": 0.0
+      },
+      {
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "line",
+          "force_mode": "normal"
+        },
+        "coherence": {
+          "status": "valid",
+          "weight": 1.0,
+          "reasons": [],
+          "suggestions": [],
+          "triple": {
+            "grasp_type": "power",
+            "contact_geometry": "line",
+            "force_mode": "normal"
+          }
+        },
+        "raw_probability": 0.0,
+        "adjusted_probability": 0.0,
+        "adjusted_score": 0.0
+      }
+    ]
+  },
+  "affordance_hypotheses": [
+    {
+      "triple": {
+        "grasp_type": "power",
+        "contact_geometry": "line",
+        "force_mode": "pull"
+      },
+      "coherence": {
+        "status": "valid",
+        "weight": 1.0,
+        "reasons": [],
+        "suggestions": [],
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "line",
+          "force_mode": "pull"
+        }
+      },
+      "raw_probability": 1.0,
+      "adjusted_probability": 1.0,
+      "adjusted_score": 1.0
+    },
+    {
+      "triple": {
+        "grasp_type": "power",
+        "contact_geometry": "point",
+        "force_mode": "push"
+      },
+      "coherence": {
+        "status": "valid",
+        "weight": 1.0,
+        "reasons": [],
+        "suggestions": [],
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "push"
+        }
+      },
+      "raw_probability": 0.0,
+      "adjusted_probability": 0.0,
+      "adjusted_score": 0.0
+    },
+    {
+      "triple": {
+        "grasp_type": "power",
+        "contact_geometry": "point",
+        "force_mode": "pull"
+      },
+      "coherence": {
+        "status": "valid",
+        "weight": 1.0,
+        "reasons": [],
+        "suggestions": [],
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "pull"
+        }
+      },
+      "raw_probability": 0.0,
+      "adjusted_probability": 0.0,
+      "adjusted_score": 0.0
+    },
+    {
+      "triple": {
+        "grasp_type": "power",
+        "contact_geometry": "point",
+        "force_mode": "torque"
+      },
+      "coherence": {
+        "status": "valid",
+        "weight": 1.0,
+        "reasons": [],
+        "suggestions": [],
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "torque"
+        }
+      },
+      "raw_probability": 0.0,
+      "adjusted_probability": 0.0,
+      "adjusted_score": 0.0
+    },
+    {
+      "triple": {
+        "grasp_type": "power",
+        "contact_geometry": "point",
+        "force_mode": "normal"
+      },
+      "coherence": {
+        "status": "valid",
+        "weight": 1.0,
+        "reasons": [],
+        "suggestions": [],
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "point",
+          "force_mode": "normal"
+        }
+      },
+      "raw_probability": 0.0,
+      "adjusted_probability": 0.0,
+      "adjusted_score": 0.0
+    },
+    {
+      "triple": {
+        "grasp_type": "power",
+        "contact_geometry": "line",
+        "force_mode": "push"
+      },
+      "coherence": {
+        "status": "valid",
+        "weight": 1.0,
+        "reasons": [],
+        "suggestions": [],
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "line",
+          "force_mode": "push"
+        }
+      },
+      "raw_probability": 0.0,
+      "adjusted_probability": 0.0,
+      "adjusted_score": 0.0
+    },
+    {
+      "triple": {
+        "grasp_type": "power",
+        "contact_geometry": "line",
+        "force_mode": "torque"
+      },
+      "coherence": {
+        "status": "valid",
+        "weight": 1.0,
+        "reasons": [],
+        "suggestions": [],
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "line",
+          "force_mode": "torque"
+        }
+      },
+      "raw_probability": 0.0,
+      "adjusted_probability": 0.0,
+      "adjusted_score": 0.0
+    },
+    {
+      "triple": {
+        "grasp_type": "power",
+        "contact_geometry": "line",
+        "force_mode": "normal"
+      },
+      "coherence": {
+        "status": "valid",
+        "weight": 1.0,
+        "reasons": [],
+        "suggestions": [],
+        "triple": {
+          "grasp_type": "power",
+          "contact_geometry": "line",
+          "force_mode": "normal"
+        }
+      },
+      "raw_probability": 0.0,
+      "adjusted_probability": 0.0,
+      "adjusted_score": 0.0
+    }
+  ],
+  "wrench_basis": {
+    "axis": [
+      -0.20989301458199644,
+      0.8303459568752309,
+      -0.516207820873182
+    ],
+    "normal": [
+      0.0002277734396548825,
+      -0.5279271201490994,
+      -0.8492896466638097
+    ],
+    "tangent": [
+      -0.9777243325953088,
+      -0.1783775426224826,
+      0.1106190839729853
+    ]
+  },
+  "functional_area_px": 11218,
+  "grasp_width_px": 33.147733523638024,
+  "grasp_width_m": 0.014157924093388764,
+  "grasp_width_mm": 14.157924093388765,
+  "handle_affordance": {
+    "functional_role": "handle",
+    "grasp_type": "power",
+    "contact_geometry": "line",
+    "force_mode": "pull",
+    "task_semantic": "scrape_blade",
+    "confidence": 0.8781023734881087,
+    "attribute_confidence": {
+      "grasp_type": 1.0,
+      "contact_geometry": 1.0,
+      "force_mode": 1.0
+    }
+  },
+  "work_end_affordance": {
+    "functional_role": "work_end",
+    "grasp_type": "none",
+    "contact_geometry": "line",
+    "force_mode": "pull",
+    "task_semantic": "scrape_blade",
+    "confidence": 0.8781023734881087,
+    "attribute_confidence": {
+      "grasp_type": 1.0,
+      "contact_geometry": 1.0,
+      "force_mode": 1.0
+    }
+  },
+  "retry_info": null
+}

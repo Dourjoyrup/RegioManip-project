@@ -1,0 +1,20 @@
+{
+  "step1": {
+    "motion1": "Move(current,H)",
+    "force1": "Off",
+    "motion2": "Grip(1)",
+    "force2": "Off"
+  },
+  "step2": {
+    "motion1": "Move(H,O)",
+    "force1": "Off"
+  },
+  "step3": {
+    "motion1": "Linear(O,Q)",
+    "force1": "Const(5, 0)"
+  },
+  "step4": {
+    "motion1": "Linear(Q, z+5)",
+    "force1": "Off"
+  }
+}

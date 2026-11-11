@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use RegioManip, please cite this manuscript."
+type: article
+title: "RegioManip: Region-Level Affordances for Zero-Shot Wrench-Bounded Tool Manipulation"
+authors:
+  - family-names: Debnath Rup
+    given-names: Dourjoy
+  - family-names: Haq
+    given-names: Shakir Muhammad Afzal ul
+  - family-names: Zheng
+    given-names: Wenzhe
+  - family-names: Yang
+    given-names: Lijin
+  - family-names: Du
+    given-names: Sen
+  - family-names: Sabuj
+    given-names: Dhali Md
+  - family-names: Li
+    given-names: Qimin
+  - family-names: Liu
+    given-names: Fuqiang
+license: MIT
+keywords:
+  - region-level affordances
+  - contact-frame hypotheses
+  - wrench-bounded constraints
+  - zero-shot tool manipulation
+  - contact-rich manipulation

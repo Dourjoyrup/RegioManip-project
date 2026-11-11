@@ -1,0 +1,72 @@
+{
+  "image_path": "data/color_000012.png",
+  "instruction": "scrape the putty by the scraper",
+  "tool_identity_mode": "force_requested_label",
+  "queries": [
+    "scraper",
+    "yellow_putty"
+  ],
+  "overlay_path": "results/regiomanip2/color_000012_run3/dino_sam/dino/debug_dino_rois.png",
+  "objects": [
+    {
+      "name": "scraper",
+      "query": "scraper",
+      "is_known_category": true,
+      "category_cfg_key": "scraper",
+      "ok": true,
+      "caption": "scraper tool",
+      "box_xyxy": [
+        358,
+        84,
+        472,
+        395
+      ],
+      "crop_box_xyxy": [
+        336,
+        62,
+        494,
+        417
+      ],
+      "phrase": "scraper tool",
+      "logit": 0.8527261018753052,
+      "params": {
+        "box_th": 0.3,
+        "text_th": 0.22,
+        "area_cap": 0.7,
+        "pad_px": 22,
+        "device": "cpu"
+      },
+      "crop_path": "results/regiomanip2/color_000012_run3/dino_sam/dino/crops/00_scraper.png"
+    },
+    {
+      "name": "yellow_putty",
+      "query": "yellow putty",
+      "is_known_category": true,
+      "category_cfg_key": "yellow_putty",
+      "ok": true,
+      "caption": "clay",
+      "box_xyxy": [
+        167,
+        156,
+        314,
+        335
+      ],
+      "crop_box_xyxy": [
+        157,
+        146,
+        324,
+        345
+      ],
+      "phrase": "clay",
+      "logit": 0.7170630693435669,
+      "params": {
+        "box_th": 0.3,
+        "text_th": 0.22,
+        "area_cap": 0.22,
+        "pad_px": 10,
+        "device": "cpu"
+      },
+      "crop_path": "results/regiomanip2/color_000012_run3/dino_sam/dino/crops/01_yellow_putty.png"
+    }
+  ]
+}

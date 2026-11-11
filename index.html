@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RegioManip: region-level affordances for zero-shot wrench-bounded tool manipulation.">
+  <title>RegioManip</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Zero-shot contact-rich manipulation</p>
+      <h1>RegioManip</h1>
+      <p class="subtitle">Region-Level Affordances for Zero-Shot Wrench-Bounded Tool Manipulation</p>
+      <p class="authors">Dourjoy Debnath Rup, Shakir Muhammad Afzal ul Haq, Wenzhe Zheng, Lijin Yang, Sen Du, Dhali Md Sabuj, Qimin Li<sup>*</sup>, and Fuqiang Liu<sup>*</sup></p>
+      <p class="affiliation">College of Mechanical and Vehicle Engineering, Chongqing University, Chongqing 400044, China<br><sup>*</sup> Corresponding authors: qimin_li@cqu.edu.cn, liufq@cqu.edu.cn</p>
+      <nav aria-label="Project links">
+        <a class="button primary" href="Manuscript/regiomanip.pdf">Paper</a>
+        <a class="button" href="results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_stage2_stage3_FINAL.mp4">Video</a>
+        <a class="button" href="https://github.com/Dourjoyrup/RegioManip-project">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section aria-labelledby="video-title">
+      <div class="section-heading">
+        <p class="kicker">Visual overview</p>
+        <h2 id="video-title">From grounded regions to executable contact frames</h2>
+      </div>
+      <video controls playsinline preload="metadata" poster="docs/assets/regiomanip_video_preview.jpg">
+        <source src="results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_stage2_stage3_FINAL.mp4" type="video/mp4">
+        Your browser does not support embedded MP4 video.
+      </video>
+      <p class="caption">The publication video follows region-level grounding, geometry checking and lattice pruning, and fixed-origin SE(3) contact-frame ranking.</p>
+    </section>
+
+    <section aria-labelledby="abstract-title">
+      <div class="section-heading">
+        <p class="kicker">Paper</p>
+        <h2 id="abstract-title">Abstract</h2>
+      </div>
+      <p>Contact-rich tool manipulation remains a last-mile challenge for embodied artificial intelligence and industrial robotics, because many real tasks require sustained physical interaction rather than simple pose reaching. Recent vision-language model (VLM) pipelines improve open-vocabulary grounding and instruction following, but their keypoint- or waypoint-centric outputs often commit to a single prediction and do not explicitly encode contact-frame stability, wrench limits, or perceptual uncertainty.</p>
+      <p>We present <strong>RegioManip</strong>, an AI-driven zero-shot framework that converts grounded tool regions into wrench-bounded action constraints for contact-rich manipulation. Given a single RGB-D observation and a natural-language instruction, RegioManip grounds each task-relevant region into grasp-type, contact-geometry, force-mode, and contact-face attributes, cross-checks them against geometry-only estimates, and prunes infeasible combinations through a physics-consistency lattice. The resulting ranked affordance hypotheses are lifted into SE(3) contact-frame hypotheses and executed with force and torque budgets derived from the grasp wrench space of the resolved contact. Confidence-adaptive strictness and hierarchical repair enable robust execution under perceptual uncertainty.</p>
+      <p>On a JAKA Zu3 across six industrial tool operations, RegioManip achieves <strong>80.8% average open-world success</strong>, compared with 65.0% for GeoManip and 57.5% for MOKA, and reaches 90.8% success with a FoundationPose prior versus 86.7% for ToolManip.</p>
+    </section>
+
+    <section aria-labelledby="pipeline-title">
+      <div class="section-heading">
+        <p class="kicker">Method</p>
+        <h2 id="pipeline-title">Three visual reasoning stages</h2>
+      </div>
+      <div class="cards">
+        <article><span>01</span><h3>Ground regions</h3><p>Fuse RGB-D and language into candidate tool and target regions and a structured VLM prompt.</p></article>
+        <article><span>02</span><h3>Check physics</h3><p>Cross-check geometry and semantic assignments, then prune inconsistent grasp/contact/force triples.</p></article>
+        <article><span>03</span><h3>Lift to SE(3)</h3><p>Back-project clean regions, fit metric primitives, rank fixed-origin frames, and select an executable pose.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">RegioManip · Chongqing University · Research project page</div>
+  </footer>
+</body>
+</html>

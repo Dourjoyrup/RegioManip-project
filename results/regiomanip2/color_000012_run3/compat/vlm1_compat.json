@@ -1,0 +1,46 @@
+{
+  "rgb_path": "data/color_000012.png",
+  "objects": [
+    {
+      "name": "scraper",
+      "object_lift_readiness": 1.0,
+      "parts": [
+        {
+          "part": "handle",
+          "mask_path": "results/regiomanip2/color_000012_run3/region_affordance/_masks/scraper__handle_fullmask.png"
+        },
+        {
+          "part": "work_end",
+          "mask_path": "results/regiomanip2/color_000012_run3/region_affordance/_masks/scraper__workend_fullmask.png"
+        }
+      ],
+      "quality_control": {
+        "lift_readiness": {
+          "handle": {
+            "score": 1.0
+          },
+          "work_end": {
+            "score": 1.0
+          }
+        }
+      }
+    },
+    {
+      "name": "yellow_putty",
+      "object_lift_readiness": 0.8,
+      "parts": [
+        {
+          "part": "whole",
+          "mask_path": "results/regiomanip2/color_000012_run3/dino_sam/sam/masks/yellow_putty_whole.png"
+        }
+      ],
+      "quality_control": {
+        "lift_readiness": {
+          "whole": {
+            "score": 0.8
+          }
+        }
+      }
+    }
+  ]
+}
