@@ -11,13 +11,27 @@ College of Mechanical and Vehicle Engineering, Chongqing University, Chongqing 4
 
 RegioManip converts grounded tool regions into physically meaningful affordance hypotheses and ranked SE(3) contact frames for contact-rich, zero-shot manipulation.
 
-[![Watch the RegioManip pipeline video](docs/assets/regiomanip_video_preview.jpg)](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_stage2_stage3_FINAL.mp4)
+## Pipeline video
 
-> Select the image above to open the complete 1080p pipeline video.
+**Stage 1 — Region-level affordance grounding** (43 s)
 
-## Abstract
+<video src="https://github.com/Dourjoyrup/RegioManip-project/raw/main/results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_grounding.mp4" controls muted playsinline width="100%"></video>
 
-Contact-rich tool manipulation remains a last-mile challenge for embodied artificial intelligence and industrial robotics, because many real tasks require sustained physical interaction rather than simple pose reaching. Recent vision-language model (VLM) pipelines improve open-vocabulary grounding and instruction following, but their keypoint- or waypoint-centric outputs often commit to a single prediction and do not explicitly encode contact-frame stability, wrench limits, or perceptual uncertainty. We present **RegioManip**, an AI-driven zero-shot framework that converts grounded tool regions into wrench-bounded action constraints for contact-rich manipulation. Given a single RGB-D observation and a natural-language instruction, RegioManip grounds each task-relevant region into grasp-type, contact-geometry, force-mode, and contact-face attributes, cross-checks them against geometry-only estimates, and prunes infeasible combinations through a physics-consistency lattice. The resulting ranked affordance hypotheses are lifted into SE(3) contact-frame hypotheses and executed with force and torque budgets derived from the grasp wrench space of the resolved contact. Confidence-adaptive strictness and hierarchical repair enable robust execution under perceptual uncertainty. On a JAKA Zu3 across six industrial tool operations, RegioManip achieves **80.8% average open-world success**, compared with **65.0% for GeoManip** and **57.5% for MOKA**, and reaches **90.8% success with a FoundationPose prior** versus **86.7% for ToolManip**.
+[results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_grounding.mp4](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_grounding.mp4)
+
+**Stage 2 — Geometry checking and lattice pruning** (20 s)
+
+<video src="https://github.com/Dourjoyrup/RegioManip-project/raw/main/results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage2_physics_check.mp4" controls muted playsinline width="100%"></video>
+
+[results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage2_physics_check.mp4](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage2_physics_check.mp4)
+
+**Stage 3 — Contact-frame lifting into SE(3)** (31 s)
+
+<video src="https://github.com/Dourjoyrup/RegioManip-project/raw/main/results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage3_contact_frame.mp4" controls muted playsinline width="100%"></video>
+
+[results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage3_contact_frame.mp4](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage3_contact_frame.mp4)
+
+The complete 95 s video (all three stages) is [here](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_stage2_stage3_FINAL.mp4) and on the [project website](https://dourjoyrup.github.io/RegioManip-project/).
 
 ## Visual pipeline
 
@@ -41,7 +55,7 @@ The included video presents these stages using the stored experimental outputs. 
 ├── regiomanip/                       # Core grounding and perception code
 ├── scripts/                          # Stage 1–3 publication-video renderers
 ├── results/regiomanip2/              # Stored experimental evidence
-├── results/video/.../                # One complete final MP4
+├── results/video/.../                # Final MP4 + three per-stage clips
 ├── index.html                        # GitHub Pages project website
 ├── style.css                         # Website design
 ├── docs/assets/                      # Website preview media
