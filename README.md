@@ -15,19 +15,13 @@ RegioManip converts grounded tool regions into physically meaningful affordance 
 
 **Stage 1 — Region-level affordance grounding** (43 s)
 
-<video src="https://github.com/Dourjoyrup/RegioManip-project/raw/main/results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_grounding.mp4" controls muted playsinline width="100%"></video>
-
 [results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_grounding.mp4](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_grounding.mp4)
 
 **Stage 2 — Geometry checking and lattice pruning** (20 s)
 
-<video src="https://github.com/Dourjoyrup/RegioManip-project/raw/main/results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage2_physics_check.mp4" controls muted playsinline width="100%"></video>
-
 [results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage2_physics_check.mp4](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage2_physics_check.mp4)
 
 **Stage 3 — Contact-frame lifting into SE(3)** (31 s)
-
-<video src="https://github.com/Dourjoyrup/RegioManip-project/raw/main/results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage3_contact_frame.mp4" controls muted playsinline width="100%"></video>
 
 [results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage3_contact_frame.mp4](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage3_contact_frame.mp4)
 
