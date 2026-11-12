@@ -13,19 +13,19 @@ RegioManip converts grounded tool regions into physically meaningful affordance 
 
 ## Pipeline video
 
-**Stage 1 — Region-level affordance grounding** (43 s)
+### Stage 1 — Region-level affordance grounding
 
-[results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_grounding.mp4](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_grounding.mp4)
+[![Stage 1: region-level affordance grounding](docs/assets/stage1_grounding.gif)](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_grounding.mp4)
 
-**Stage 2 — Geometry checking and lattice pruning** (20 s)
+### Stage 2 — Geometry checking and lattice pruning
 
-[results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage2_physics_check.mp4](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage2_physics_check.mp4)
+[![Stage 2: geometry checking and lattice pruning](docs/assets/stage2_physics_check.gif)](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage2_physics_check.mp4)
 
-**Stage 3 — Contact-frame lifting into SE(3)** (31 s)
+### Stage 3 — Contact-frame lifting into SE(3)
 
-[results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage3_contact_frame.mp4](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage3_contact_frame.mp4)
+[![Stage 3: contact-frame lifting into SE(3)](docs/assets/stage3_contact_frame.gif)](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage3_contact_frame.mp4)
 
-The complete 95 s video (all three stages) is [here](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_stage2_stage3_FINAL.mp4) and on the [project website](https://dourjoyrup.github.io/RegioManip-project/).
+Click a preview to open that stage's full-quality 1080p MP4, or watch the [complete 95 s video](results/video/regiomanip_stage1_stage2_stage3_final/regiomanip_stage1_stage2_stage3_FINAL.mp4) on the [project website](https://dourjoyrup.github.io/RegioManip-project/).
 
 ## Visual pipeline
 
@@ -52,7 +52,7 @@ The included video presents these stages using the stored experimental outputs. 
 ├── results/video/.../                # Final MP4 + three per-stage clips
 ├── index.html                        # GitHub Pages project website
 ├── style.css                         # Website design
-├── docs/assets/                      # Website preview media
+├── docs/assets/                      # Preview image and per-stage GIF previews
 └── reproduce_final_video.sh          # End-to-end video reproduction
 ```
 
